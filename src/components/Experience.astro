@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+     {
+          date: "Recientemente",
+          title: "Desarrollo Full Stack - Foscan",
+          description:
+               "Desarrollé una aplicación web completa para Foscan, una empresa de petróleos, abarcando tanto el front-end como el back-end del proyecto. Utilicé Angular para el diseño de la interfaz de usuario y Node.js para la lógica del servidor. Me centré en la visualización de datos mediante la creación de gráficos de barras y líneas, permitiendo a Foscan analizar grandes cantidades de datos relevantes. Además, establecí conexiones a una base de datos SQL Server en Azure para consumir los datos necesarios. Esta experiencia me permitió aplicar mis habilidades técnicas en un entorno empresarial real y contribuir al éxito de Foscan con soluciones digitales innovadoras.",
+     },
+     {
+          date: "Febrero 2024",
+          title: "Desarrollo Frontend - Quintechnology SAS",
+          description:
+               "Diseñé, desarrollé y desplegué un sitio web estático para Quintechnology SAS, una empresa de instrumentación y servicios de ingeniería. Mi rol abarcó desde el diseño inicial hasta el despliegue en Hostinger, asegurando una presencia en línea efectiva para la empresa.",
+     },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+     {
+          EXPERIENCE.map((experience) => (
+               <li class="mb-10 m-6">
+                    <ExperienceItem {...experience} />
+               </li>
+          ))
+     }
+</ol>
