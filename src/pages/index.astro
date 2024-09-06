@@ -2,6 +2,7 @@
 import Badge from "../components/Badge.astro";
 import Experience from "../components/Experience.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import SocialPill from "../components/SocialPill.astro";
@@ -14,83 +15,12 @@ import LinkedIn from "../components/icons/LinkedIn.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout
-	title="Portfolio de Anderson Marin - Programador y Desarrollador de  Aplicaciones Web"
->
-	<main class="px-4">
-		<SectionContainer id="sobre-mi" class="py-24 pb-24">
-			<img
-				class="rounded-full size-48 object-cover mb-8 mx-start"
-				src="../../public/perfil.jpg"
-				alt="Fotografía de Anderson Marín, Desarrollador Web y Estudiante de Ingeniería"
-			/>
-			<h1
-				class="text-white font-semibold w-full text-3xl md:text-5xl flex
-				flex-row gap-x-4 pb-6 lg:pb-10"
-			>
-				Hey, Soy Anderson!
-				<a
-					class="flex items-center justify-center hover:scale-105 transition-transform duration-300 ease-in-out"
-					href="https://www.linkedin.com/in/andersondev22"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Badge>Disponible para trabajar</Badge>
-				</a>
-			</h1>
-			<h2 class="text-xl md:text-2xl text-wrap text-white">
-				+2 años de experiencia. <span class="text-yellow-200/90"
-					>Desarrollador Web y Estudiante de Ingeniería</span
-				>. <span class="text-red-200/90">De Bogotá, Colombia.</span>
-				<span class="opacity-70">
-					Especializado en Realizar Aplicaciones Únicas
-				</span>.
-			</h2>
-			<nav class="flex gap-4 mt-8 flex-wrap">
-				<SocialPill
-					href="https://www.linkedin.com/in/andersondev22"
-				>
-					<LinkedIn class="size-4 lg:size-6" />
-					LinkedIn
-				</SocialPill>
-				<SocialPill href="https://github.com/AndersonPrograming">
-					<GitHub class="size-4 lg:size-6" />
-					GitHub
-				</SocialPill>
-				<SocialPill
-					href="https://www.instagram.com/anderson.marin.20?igsh=MThkbW92Y2M2OXQzYw=="
-				>
-					<Instagram class="size-4 lg:size-6" />
-					Instagram
-				</SocialPill>
-				<SocialPill href="mailto:andersonarturomarin@gmail.com">
-					<Email class="size-4 lg:size-6" />
-					andersonarturomarin@gmail.com
-				</SocialPill>
-			</nav>
-		</SectionContainer>
-
-		<SectionContainer id="experiencia">
-			<h2
-				class="text-2xl text-white font-semibold mb-2 flex items-center gap-x-2"
-			>
-				<ExperienceIcon class="size-6" />
-				Experiencia Laboral
-			</h2>
+<Layout title="Anderson Marin - aarturo.dev">
+	<main class="relative flex min-h-screen flex-col py-4 md:py-6">
+		<SectionContainer>
+			<Hero />
+			<Projects />
 			<Experience />
-		</SectionContainer>
-		<SectionContainer id="proyectos">
-			<h2
-				class="text-2xl text-white font-semibold mb-2 flex items-center gap-x-2"
-			>
-				<Code class="size-6" />
-				Proyectos
-			</h2>
-			<div
-				class="grid grid-cols-1 place-items-center md:grid-cols-2 gap-4"
-			>
-				<Projects />
-			</div>
 		</SectionContainer>
 	</main>
 </Layout>
