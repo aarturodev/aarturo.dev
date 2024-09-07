@@ -5,12 +5,11 @@ import GitHub from "./icons/GitHub.astro";
 
 const PROJECTS = [
      {
-          title: "aarturo.dev",
-          logo: "https://raw.githubusercontent.com/pheralb/toast/main/docs/public/images/logo_svg.svg",
+          title: "anderson.dev",
+          logo: "/public/Logo.svg",
           description: "✨ My personal website",
-          link: "https://aarturo-dev.vercel.app",
+          link: "https://anderson-dev.vercel.app",
           gitHub: "https://github.com/aarturodev/aarturo.dev",
-          image: "../../public/proyecto.png",
           tags: ["Astro", "Tailwind", "Typescript"],
      },
 ];
@@ -30,13 +29,13 @@ const PROJECTS = [
                                    rel="noopener noreferrer"
                                    class="group flex items-center gap-[6px] font-medium decoration-neutral-500 hover:cursor-pointer"
                               >
-                                   <div class="h-6 w-6 bg-gray-300 rounded-full">
+                                   <div class="size-5">
                                         <Image
                                              src={project.logo}
                                              alt="toast"
-                                             width={20}
-                                             height={20}
-                                             class="h-6 w-6"
+                                             width={15}
+                                             height={15}
+                                             class="size-full"
                                              loading={"eager"}
                                         />
                                    </div>
