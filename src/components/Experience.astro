@@ -4,29 +4,32 @@ import ExperienceItem from "./ExperienceItem.astro";
 const EXPERIENCE = [
      {
           date: "Recientemente",
-          title: "Desarrollo Full Stack",
+          title: "Desarrollador Full Stack",
           empresa: "Foscan",
           link: "https://foscan.com/",
           description:
                "Desarrollé una aplicación web completa para Foscan, una empresa de petróleos, abarcando tanto el front-end como el back-end del proyecto. Utilicé Angular para diseñar la interfaz de usuario y Node.js para la lógica del servidor. Me centré en la visualización de datos mediante la creación de gráficos de barras y líneas, permitiendo a Foscan analizar su información. Además, establecí conexiones a una bases de datos de SQL Server en Azure mediante una API. Esta experiencia me permitió aplicar mis habilidades técnicas en un entorno empresarial real y contribuir al éxito de Foscan con soluciones digitales innovadoras.",
      },
-     {
+     /** {
           date: "Febrero 2024",
-          title: "Desarrollo Frontend",
+          title: "Desarrollador Frontend",
           empresa: "Quintechnology SAS",
           link: "https://www.quintechnologysas.com/",
           description:
                "Diseñé, desarrollé y desplegué un sitio web estático para Quintechnology SAS, una empresa de instrumentación y servicios de ingeniería. Mi rol abarcó desde el diseño inicial hasta el despliegue en Hostinger, asegurando una presencia en línea efectiva para la empresa.",
-     },
+     },**/
 ];
 ---
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
-     {
-          EXPERIENCE.map((experience) => (
-               <li class="mb-10 m-6">
-                    <ExperienceItem {...experience} />
-               </li>
-          ))
-     }
-</ol>
+<section>
+     <h3 class="text-xl py-4 font-medium">Experiencia</h3>
+     <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+          {
+               EXPERIENCE.map((experience) => (
+                    <li class="mb-10 m-6">
+                         <ExperienceItem {...experience} />
+                    </li>
+               ))
+          }
+     </ol>
+</section>
