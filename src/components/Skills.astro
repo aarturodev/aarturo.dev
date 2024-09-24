@@ -1,72 +1,72 @@
 ---
 import Angular from "./icons/Angular.astro";
-import Css from "./icons/Css.astro";
-import Html from "./icons/Html.astro";
-import Javascript from "./icons/Javascript.astro";
-import Typescript from "./icons/Typescript.astro";
-import Node from "./icons/Node.astro";
-import SqlServer from "./icons/SqlServer.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
-import Mysql from "./icons/Mysql.astro";
-import Mongo from "./icons/Mongo.astro";
-import Tailwind from "./icons/Tailwind.astro";
+import C from "./icons/C.astro";
+import Css from "./icons/Css.astro";
 import Git from "./icons/Git.astro";
 import GitHub from "./icons/GitHub.astro";
-import C from "./icons/C.astro";
+import Html from "./icons/Html.astro";
+import Javascript from "./icons/Javascript.astro";
+import Mongo from "./icons/Mongo.astro";
+import Mysql from "./icons/Mysql.astro";
+import SqlServer from "./icons/SqlServer.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Typescript from "./icons/Typescript.astro";
+import Node from "./icons/Node.astro";
 
 const skills = [
-     { name: "Astro", icon: "AstroIcon" },
-     { name: "Angular", icon: "Angular" },
-     { name: "Tailwind", icon: "Tailwind" },
-     { name: "NodeJs", icon: "Node" },
-     { name: "SQLServer", icon: "SqlServer" },
-     { name: "MySQL", icon: "Mysql" },
-     { name: "MongoDB", icon: "Mongo" },
-     { name: "Git", icon: "Git" },
-     { name: "GitHub", icon: "GitHub" },
-     { name: "C++", icon: "C" },
+  { name: "Astro", icon: "AstroIcon" },
+  { name: "Angular", icon: "Angular" },
+  { name: "Tailwind", icon: "Tailwind" },
+  { name: "NodeJs", icon: "Node" },
+  { name: "SQLServer", icon: "SqlServer" },
+  { name: "MySQL", icon: "Mysql" },
+  { name: "MongoDB", icon: "Mongo" },
+  { name: "Git", icon: "Git" },
+  { name: "GitHub", icon: "GitHub" },
+  { name: "C++", icon: "C" },
 ];
 
 const SKILL_ICONS: Record<string, any> = {
-     Html,
-     Css,
-     Javascript,
-     Typescript,
-     Angular,
-     Node,
-     SqlServer,
-     AstroIcon,
-     Mysql,
-     Mongo,
-     Tailwind,
-     Git,
-     GitHub,
-     C,
+  Html,
+  Css,
+  Javascript,
+  Typescript,
+  Angular,
+  Node,
+  SqlServer,
+  AstroIcon,
+  Mysql,
+  Mongo,
+  Tailwind,
+  Git,
+  GitHub,
+  C,
 };
 ---
 
 <section>
-     <h3 class="text-xl py-6 font-medium">Habilidades</h3>
-     <div
-          class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6"
-     >
-          {
-               skills.map(({ icon, name }) => {
-                    const Icon = SKILL_ICONS[icon];
-                    return (
-                         <div class="group">
-                              <div class="relative rounded-xl shadow dark:shadow-slate-800 p-4 transition-all duration-300 ease-in-out transform group-hover:-translate-y-1 group-hover:shadow dark:group-hover:shadow-slate-500 overflow-hidden">
-                                   <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300" />
-                                   <div class="relative z-10 flex flex-col items-center">
-                                        <Icon class="size-8 mb-3 text-gray-800 dark:text-white transition-colors duration-300" />
-                                        <p class="text-center text-xm text-gray-800 transition-colors duration-300 dark:text-neutral-500">
-                                             {name}
-                                        </p>
-                                   </div>
-                              </div>
-                         </div>
-                    );
-               })
-          }
-     </div>
+  <h3 class="text-xl py-6 font-medium">Habilidades</h3>
+  <div
+    class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6"
+  >
+    {
+      skills.map(({ icon, name }) => {
+        const Icon = SKILL_ICONS[icon];
+        return (
+          <div class="group">
+            <div class="relative rounded-xl shadow dark:shadow-slate-800 p-4 transition-all duration-300 ease-in-out transform group-hover:-translate-y-1 group-hover:shadow dark:group-hover:shadow-slate-500 overflow-hidden">
+              <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300" />
+              <div class="relative z-10 flex flex-col items-center">
+                <Icon class="size-8 mb-3 text-gray-700 dark:text-white transition-colors duration-300" />
+                <p class="text-center text-xm text-gray-800 transition-colors duration-300 dark:text-neutral-300">
+                  {name}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
 </section>

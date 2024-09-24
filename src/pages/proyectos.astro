@@ -1,0 +1,91 @@
+---
+import Arrow from "../components/icons/Arrow.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import { PROJECTS } from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Anderson Marin - Proyectos">
+  <main class="relative flex min-h-screen flex-col py-4 md:py-6">
+    <SectionContainer>
+      <section>
+        <h3 class="text-xl py-4 font-medium">Todos mis proyectos</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {
+            PROJECTS.map((project) => (
+              <article class="flex flex-col justify-between border border-neutral-300 rounded-md p-4 h-full relative px-3 py-4 shadow-sm hover:bg-[#d4d4d432] transition-all hover:shadow dark:border-neutral-800 ">
+                <header class="flex items-center justify-between p-2">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex items-center gap-[6px] font-medium decoration-neutral-500 hover:cursor-pointer"
+                  >
+                    <span>{project.logo}</span>
+                    <span class="decoration-dotted underline-offset-[5px] hover:underline dark:text-slate-300">
+                      {project.title}
+                    </span>
+                    <span class="opacity-50 duration-200 group-hover:translate-x-[1.5px] group-hover:opacity-100">
+                      <Arrow />
+                    </span>
+                  </a>
+                  <a
+                    aria-label="GitHub"
+                    href={project.gitHub}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex items-center gap-[6px] font-medium decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:cursor-pointer"
+                  >
+                    <GitHub class="size-4" />
+                  </a>
+                </header>
+
+                {/* Descripción */}
+                <p class="text-xs text-neutral-500 p-2 dark:text-neutral-300">
+                  {project.description}
+                </p>
+
+                {/* Footer (Tags) */}
+                <footer class="flex items-center p-2 gap-2 overflow-x-auto scroll-custom">
+                  {project.tags.map((tag) => (
+                    <span class="inline-flex min-w-max cursor-default items-center space-x-2 rounded-md border border-neutral-300 bg-neutral-200/50 px-2 py-1 font-mono text-xs font-medium text-neutral-700 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300">
+                      {tag}
+                    </span>
+                  ))}
+                </footer>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+    </SectionContainer>
+  </main>
+</Layout>
+<style>
+  /* Personalización del scrollbar */
+  .scroll-custom::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+  }
+
+  .scroll-custom::-webkit-scrollbar-track {
+    background: #ffffff00; /* Color del fondo de la pista del scroll */
+  }
+
+  .scroll-custom::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del scroll */
+    border-radius: 10px; /* Borde redondeado */
+    border: 2px solid #ffffff00; /* Espacio alrededor del scroll */
+  }
+
+  .scroll-custom::-webkit-scrollbar-thumb:hover {
+    background-color: #888; /* Color cuando el usuario interactúa con el scroll */
+  }
+
+  /* Soporte para Firefox */
+  .scroll-custom {
+    scrollbar-color: #888 #ffffff00; /* Scroll en gris con pista en blanco */
+    scrollbar-width: thin; /* Barra de desplazamiento fina */
+  }
+</style>

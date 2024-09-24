@@ -1,26 +1,164 @@
 ---
 import Arrow from "./icons/Arrow.astro";
+import ArrowMas from "./icons/ArrowMas.astro";
 import GitHub from "./icons/GitHub.astro";
 
-const PROJECTS = [
+export const PROJECTS = [
   {
-    title: "Quinthecnology",
-    logo: "🌐",
-    description: "✨ web de quinthecnology",
+    title: "Foscan",
+    logo: "💸",
+    description:
+      "Aplicación web integral para empresa del sector petrolero, gestionando tanto el frontend como el backend.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["Angular", "Typescript", "NodeJs", "SQLServer", "Azure"],
+  },
+  {
+    title: "Quinthecnology SAS",
+    logo: "💸",
+    description:
+      "Sitio web estático para una empresa que ofrece servicios de instrumentación e ingeniería.",
     link: "https://www.quintechnologysas.com/",
-    gitHub: "#",
-    tags: ["HTML", "CSS", "Javascript", "Bootstrap"],
+    gitHub: "https://www.quintechnologysas.com/",
+    tags: ["HTML", "CSS", "Javascript", "Bootstrap", "Hostinger"],
+  },
+
+  {
+    title: "Blog Personal",
+    logo: "🗒️",
+    description:
+      "Blog personal con artículos sobre programación, desarrollo web, bases de datos y más.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["Astro", "Tailwind", "NodeJs", "SQLServer"],
+  },
+
+  {
+    title: "E-commerce",
+    logo: "🛒",
+    description:
+      "Tienda en línea para venta de productos electrónicos, con sistema de carrito de compras y pagos en línea.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["React", "Typescript", "MongoDB", "Tailwind", "NodeJs"],
+  },
+  {
+    title: "API RESTful",
+    logo: "🔌",
+    description:
+      "API RESTful para una aplicación de gestión de tareas, con endpoints para crear, leer, actualizar y eliminar tareas.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["Express", "MongoDB", "Postman", "Heroku"],
+  },
+  {
+    title: "Weather App",
+    logo: "🌦️",
+    description:
+      "Aplicación web para consultar el clima actual y pronóstico de 5 días de cualquier ciudad del mundo.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["React", "Typescript", "OpenWeatherMap", "Tailwind"],
+  },
+  {
+    title: "To-Do List",
+    logo: "📝",
+    description:
+      "Lista de tareas con funcionalidades para agregar, marcar como completadas y eliminar tareas.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["Vue", "Javascript", "LocalStorage"],
+  },
+  {
+    title: "Chat App",
+    logo: "💬",
+    description:
+      "Aplicación de chat en tiempo real con salas de chat públicas y privadas.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["Socket.io", "NodeJs", "Express", "React", "Tailwind"],
+  },
+  {
+    title: "Portfolio",
+    logo: "📂",
+    description:
+      "Portafolio personal con información sobre mi experiencia, habilidades y proyectos.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["Astro", "Tailwind", "Markdown", "Vercel"],
+  },
+  {
+    title: "Calculator",
+    logo: "🧮",
+    description:
+      "Calculadora web con operaciones básicas de suma, resta, multiplicación y división.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["HTML", "CSS", "Javascript"],
+  },
+  {
+    title: "Memory Game",
+    logo: "🧩",
+    description:
+      "Juego de memoria con cartas que se voltean para encontrar las parejas.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["React", "Typescript", "Styled Components"],
+  },
+  {
+    title: "Quiz App",
+    logo: "📝",
+    description:
+      "Aplicación de preguntas y respuestas con múltiples categorías y niveles de dificultad.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["React", "Typescript", "Open Trivia DB", "Tailwind"],
+  },
+  {
+    title: "Portfolio",
+    logo: "📂",
+    description:
+      "Portafolio personal con información sobre mi experiencia, habilidades y proyectos.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["Astro", "Tailwind", "Markdown", "Vercel"],
+  },
+  {
+    title: "Calculator",
+    logo: "🧮",
+    description:
+      "Calculadora web con operaciones básicas de suma, resta, multiplicación y división.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["HTML", "CSS", "Javascript"],
+  },
+  {
+    title: "Memory Game",
+    logo: "🧩",
+    description:
+      "Juego de memoria con cartas que se voltean para encontrar las parejas.",
+    link: "https://foscan.com/",
+    gitHub: "https://foscan.com/",
+    tags: ["React", "Typescript", "Styled Components"],
   },
 ];
 ---
 
 <section>
-  <h3 class="text-xl py-4 font-medium">Proyectos</h3>
+  <div class="flex w-full justify-between">
+    <h3 class="text-xl py-4 font-medium">Proyectos</h3>
+    <a
+      class="flex mt-4 items-center gap-1 -translate-x-3 hover:translate-x-0 ease-in-out duration-300 text-neutral-500"
+      href="/proyectos"
+    >
+      <span class="text-sm">Todos los proyectos</span>
+      <ArrowMas class="size-2" />
+    </a>
+  </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {
-      PROJECTS.map((project) => (
+      PROJECTS.slice(0, 4).map((project) => (
         <article class="flex flex-col justify-between border border-neutral-300 rounded-md p-4 h-full relative px-3 py-4 shadow-sm hover:bg-[#d4d4d432] transition-all hover:shadow dark:border-neutral-800 ">
-          {/* Encabezado */}
           <header class="flex items-center justify-between p-2">
             <a
               href={project.link}
@@ -29,7 +167,7 @@ const PROJECTS = [
               class="group flex items-center gap-[6px] font-medium decoration-neutral-500 hover:cursor-pointer"
             >
               <span>{project.logo}</span>
-              <span class="decoration-dotted underline-offset-[5px] hover:underline">
+              <span class="decoration-dotted underline-offset-[5px] hover:underline dark:text-slate-300">
                 {project.title}
               </span>
               <span class="opacity-50 duration-200 group-hover:translate-x-[1.5px] group-hover:opacity-100">
@@ -53,9 +191,9 @@ const PROJECTS = [
           </p>
 
           {/* Footer (Tags) */}
-          <footer class="flex items-center p-2 gap-2">
+          <footer class="flex items-center p-2 gap-2 overflow-x-auto scroll-custom">
             {project.tags.map((tag) => (
-              <span class="inline-flex cursor-default items-center space-x-2 rounded-md border border-neutral-300 bg-neutral-200/50 px-2 py-1 font-mono text-xs font-medium text-neutral-700 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300">
+              <span class="inline-flex min-w-max cursor-default items-center space-x-2 rounded-md border border-neutral-300 bg-neutral-200/50 px-2 py-1 font-mono text-xs font-medium text-neutral-700 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300">
                 {tag}
               </span>
             ))}
@@ -65,3 +203,29 @@ const PROJECTS = [
     }
   </div>
 </section>
+<style>
+  /* Personalización del scrollbar */
+  .scroll-custom::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+  }
+
+  .scroll-custom::-webkit-scrollbar-track {
+    background: #ffffff00; /* Color del fondo de la pista del scroll */
+  }
+
+  .scroll-custom::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del scroll */
+    border-radius: 10px; /* Borde redondeado */
+    border: 2px solid #ffffff00; /* Espacio alrededor del scroll */
+  }
+
+  .scroll-custom::-webkit-scrollbar-thumb:hover {
+    background-color: #888; /* Color cuando el usuario interactúa con el scroll */
+  }
+
+  /* Soporte para Firefox */
+  .scroll-custom {
+    scrollbar-color: #888 #ffffff00; /* Scroll en gris con pista en blanco */
+    scrollbar-width: thin; /* Barra de desplazamiento fina */
+  }
+</style>

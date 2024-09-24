@@ -1,0 +1,35 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente",
+    title: "Ingeniería en Sistemas y Computación",
+    empresa: "Universidad de Cundinamarca",
+    link: "https://www.ucundinamarca.edu.co/",
+    description:
+      "Estudiante de 7 semestre, con un enfoque en el desarrollo de software y la gestión de proyectos. He adquirido habilidades en programación, bases de datos, redes y sistemas operativos, entre otros aspectos fundamentales para mi formación profesional.",
+  },
+  {
+    date: "Mayo 2020",
+    title: "Técnico en Desarrollo de Software",
+    empresa: "SENA",
+    link: "https://oferta.senasofiaplus.edu.co/sofia-oferta/inicio-sofia-plus.html",
+    description:
+      "Graduado del Técnico en Desarrollo de Software, con habilidades en programación, bases de datos y desarrollo web. Experiencia en proyectos optimizados y escalables, utilizando metodologías ágiles. Comprometido con las mejores prácticas a lo largo del ciclo de vida del software para ofrecer soluciones eficientes y adaptadas a las demandas del mercado.",
+  },
+];
+---
+
+<section>
+  <h3 class="text-xl py-4 font-medium">Educación</h3>
+  <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+    {
+      EXPERIENCE.map((experience) => (
+        <li class="mb-10 m-6">
+          <ExperienceItem {...experience} />
+        </li>
+      ))
+    }
+  </ol>
+</section>
