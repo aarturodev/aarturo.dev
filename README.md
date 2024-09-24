@@ -1,5 +1,6 @@
 ## ✨ Portfolio
-![image](https://github.com/user-attachments/assets/f1c34962-d710-450f-ad52-cc2212fbbc43)
+![image](https://github.com/user-attachments/assets/11004c9e-598c-49ff-956b-c2196263112e)
+
 
 ## 🚀 Contributing
 
