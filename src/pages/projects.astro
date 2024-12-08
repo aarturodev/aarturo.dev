@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
     <SectionContainer>
       <section>
         <h3 class="text-xl py-4 font-medium">All projects</h3>
-        <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {
             PROJECTS.map((project) => (
               <article class="flex flex-col justify-between border border-neutral-300 rounded-md p-4 h-full relative px-3 py-4 shadow-sm hover:bg-[#d4d4d432] transition-all hover:shadow dark:border-neutral-800 ">
@@ -50,12 +50,12 @@ import Layout from "../layouts/Layout.astro";
                 </header>
 
                 {/* Descripción */}
-                <p class="text-sm p-2 max-h-16 h-auto  overflow-y-auto scroll-custom  dark:text-neutral-300">
+                <p class="text-sm p-2  overflow-y-hidden scroll-custom  dark:text-neutral-300">
                   {project.description}
                 </p>
 
                 {/* Footer (Tags) */}
-                <footer class="flex items-center p-2 gap-2 overflow-x-auto scroll-custom">
+                <footer class="flex items-center p-2 gap-2 overflow-x-hidden scroll-custom">
                   {project.tags.map((tag) => (
                     <span class="inline-flex min-w-max cursor-default items-center space-x-2 rounded-md border border-neutral-300 bg-neutral-200/50 px-2 py-1 font-mono text-xs font-medium text-neutral-700 dark:border-neutral-800 dark:bg-neutral-800/60 dark:text-neutral-300">
                       {tag}
