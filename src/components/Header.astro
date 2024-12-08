@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import Email from "./icons/Email.astro";
 import GitHub from "./icons/GitHub.astro";
 import Instagram from "./icons/Instagram.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
+import { lazy } from "astro/zod";
 ---
 
 <nav
@@ -12,15 +14,14 @@ import LinkedIn from "./icons/LinkedIn.astro";
   <a
     aria-label="Ir a la página principal"
     href="/"
-    class="text-md flex items-center space-x-2 font-medium tracking-tight opacity-80 transition-opacity duration-150 hover:opacity-100"
+    class="text-md flex items-center space-x-2 font-medium tracking-tight transition-opacity duration-150 hover:opacity-80"
   >
-    <span>anderson</span><span class="text-xs relative -top-1 font-normal"
-      >Dev</span
-    >
+   <Image loading="eager" src="/logo.webp" alt="" width="150" height="40" class="h-auto">
+    
   </a>
 
   <!-- Enlaces a redes sociales -->
-  <div class="flex items-center space-x-1">
+  <div class="flex items-center space-x-1 ">
     <!-- LinkedIn -->
     <a
       aria-label="LinkedIn"

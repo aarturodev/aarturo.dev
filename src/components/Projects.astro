@@ -2,44 +2,49 @@
 import Arrow from "./icons/Arrow.astro";
 import ArrowMas from "./icons/ArrowMas.astro";
 import GitHub from "./icons/GitHub.astro";
+import Lock from "./icons/Lock.astro";
 
 export const PROJECTS = [
   {
     title: "Movilidad Bogotá",
     logo: "🗂️",
     description:
-      "✨ Aplicación web para Movilidad Bogotá que optimiza la gestión de expedientes mediante su creación y actualización continua. Utilicé Angular y Node.js, implementando autenticación por tokens, control de acceso basado en roles y un sistema seguro de inicio de sesión. La aplicación también permite generar y descargar reportes detallados de cada expediente.",
+      "🚀 Web application for Movilidad Bogotá ",
     link: "https://www.movilidadbogota.gov.co/web/",
-    gitHub: "https://github.com/aarturodev/Transport-Frontend",
+    gitHub: "https://github.com/aarturodev",
     tags: ["Angular", "Typescript", "NodeJs", "SQLServer", "Azure"],
+    visibility: "private",
   },
   {
     title: "Foscan",
-    logo: "📈",
+    logo: "📊",
     description:
-      "✨ Aplicación web para Foscan, empresa del sector petrolero, que facilita la visualización y análisis de datos clave mediante gráficos interactivos de barras y líneas. Utilicé Angular y Node.js para desarrollar una interfaz de usuario intuitiva y una lógica de servidor eficiente. Además, implementé una API personalizada para integrar una base de datos SQL Server en Azure, optimizando la gestión y acceso a la información.",
+      "🌱 Web application for Foscan",
     link: "https://github.com/aarturodev/Foscan-Backend",
-    gitHub: "https://github.com/aarturodev/Foscan-Backend",
+    gitHub: "https://github.com/aarturodev/",
     tags: ["Angular", "Typescript", "NodeJs", "SQLServer", "Azure"],
+    visibility: "private",
   },
   {
     title: "Quinthecnology",
-    logo: "🎛️",
+    logo: "🛠️",
     description:
-      "✨ Sitio web estático para Quintechnology, empresa de instrumentación y servicios de ingeniería, que asegura una presencia en línea efectiva. Diseñé, desarrollé y desplegué el sitio en Hostinger, abarcando todo el proceso desde el diseño inicial hasta el despliegue final.",
+      "🧩 Landing page for Quintechnology",
     link: "https://www.quintechnologysas.com/",
-    gitHub: "https://www.quintechnologysas.com/",
+    gitHub: "https://github.com/aarturodev/",
     tags: ["HTML", "CSS", "Javascript", "Bootstrap", "Hostinger"],
+    visibility: "private",
   },
 
   {
     title: "Blog Personal",
     logo: "🗒️",
     description:
-      "✨ Blog personal con artículos sobre programación, desarrollo web, bases de datos y más.",
+      "✨ Personal blog",
     link: "https://foscan.com/",
     gitHub: "https://foscan.com/",
     tags: ["Astro", "Tailwind", "NodeJs", "SQLServer"],
+
   },
 
   {
@@ -50,6 +55,7 @@ export const PROJECTS = [
     link: "https://foscan.com/",
     gitHub: "https://foscan.com/",
     tags: ["React", "Typescript", "MongoDB", "Tailwind", "NodeJs"],
+
   },
   {
     title: "API RESTful",
@@ -155,13 +161,13 @@ export const PROJECTS = [
 
 <section>
   <div class="flex justify-between py-4">
-    <h3 class="text-xl p-2 font-medium">Proyectos</h3>
+    <h3 class="text-xl p-2 font-medium">Projects</h3>
     <a
-      class="flex items-center gap-1 -translate-x-3 hover:translate-x-0 ease-in-out duration-300 text-neutral-500"
-      href="/proyectos"
+      class="flex items-center gap-1 -translate-x-3 hover:scale-105 ease-in-out duration-300 text-neutral-500"
+      href="/projects"
     >
-      <span class="text-sm">Todos los proyectos</span>
-      <ArrowMas class="size-2" />
+      <span class="text-sm">More projects !</span>
+      <!-- <ArrowMas class="size-2" />-->
     </a>
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -190,13 +196,13 @@ export const PROJECTS = [
               rel="noopener noreferrer"
               class="group flex items-center gap-[6px] font-medium decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:cursor-pointer"
             >
-              <div class="flex gap-4 items-center">
-                {index === 0 && (
-                  <div class="cursor-default items-center justify-center rounded-full border border-neutral-300 dark:border-neutral-800 bg-[length:200%_100%] bg-left bg-[linear-gradient(110deg,#f5f5f5_45%,#d4d4d4_55%,#f5f5f5_65%)] dark:bg-[linear-gradient(110deg,#171717_45%,#262626_55%,#171717_65%)] animate-shine px-2 py-0.5 text-[10px] font-medium text-neutral-700 dark:text-neutral-200 transition-colors">
-                    último
-                  </div>
-                )}
-                <GitHub class="size-4" />
+              <div class="flex gap-4 items-center ">
+                {project.visibility === "private" ? (
+                 
+                  <Lock class="size-4 font-bold"/> 
+                ) :<GitHub class="size-4" />}
+
+                
               </div>
             </a>
           </header>

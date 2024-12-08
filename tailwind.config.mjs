@@ -13,6 +13,18 @@ export default {
         shine: "shine 3s infinite linear",
       },
     },
+    backgroundColor:{
+      "primary": "#00b8c7",
+      "secondary": "#00829a",
+      "tertiary": "#005770",
+      "quaternary": "#071b2a",
+    },
+    textColor:{
+      "primary": "#00b8c7",
+      "secondary": "#00829a",
+      "tertiary": "#005770",
+      "quaternary": "#071b2a",
+    },
   },
   plugins: [],
 };

@@ -3,6 +3,7 @@ import Arrow from "../components/icons/Arrow.astro";
 import GitHub from "../components/icons/GitHub.astro";
 import { PROJECTS } from "../components/Projects.astro";
 import SectionContainer from "../components/SectionContainer.astro";
+import Lock from "../components/icons/Lock.astro";
 
 import Layout from "../layouts/Layout.astro";
 ---
@@ -11,8 +12,8 @@ import Layout from "../layouts/Layout.astro";
   <main class="relative flex min-h-screen flex-col py-4 md:py-6">
     <SectionContainer>
       <section>
-        <h3 class="text-xl py-4 font-medium">Todos mis proyectos</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h3 class="text-xl py-4 font-medium">All projects</h3>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
           {
             PROJECTS.map((project) => (
               <article class="flex flex-col justify-between border border-neutral-300 rounded-md p-4 h-full relative px-3 py-4 shadow-sm hover:bg-[#d4d4d432] transition-all hover:shadow dark:border-neutral-800 ">
@@ -38,7 +39,13 @@ import Layout from "../layouts/Layout.astro";
                     rel="noopener noreferrer"
                     class="group flex items-center gap-[6px] font-medium decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:cursor-pointer"
                   >
-                    <GitHub class="size-4" />
+                 <div class="flex gap-4 items-center ">
+                {project.visibility === "private" ? (
+                 
+                  <Lock class="size-4 font-bold"/> 
+                ) :<GitHub class="size-4" />}
+
+              </div>
                   </a>
                 </header>
 
@@ -55,6 +62,7 @@ import Layout from "../layouts/Layout.astro";
                     </span>
                   ))}
                 </footer>
+                
               </article>
             ))
           }
