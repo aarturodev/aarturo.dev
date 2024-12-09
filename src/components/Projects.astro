@@ -1,6 +1,5 @@
 ---
 import Arrow from "./icons/Arrow.astro";
-import ArrowMas from "./icons/ArrowMas.astro";
 import GitHub from "./icons/GitHub.astro";
 import Lock from "./icons/Lock.astro";
 
@@ -8,8 +7,7 @@ export const PROJECTS = [
   {
     title: "Movilidad Bogotá",
     logo: "🗂️",
-    description:
-      "🚀 Web application for Movilidad Bogotá ",
+    description: "🚀 Web application for Movilidad Bogotá ",
     link: "https://www.movilidadbogota.gov.co/web/",
     gitHub: "https://github.com/aarturodev",
     tags: ["Angular", "Typescript", "NodeJs", "SQLServer", "Azure"],
@@ -18,8 +16,7 @@ export const PROJECTS = [
   {
     title: "Foscan",
     logo: "📊",
-    description:
-      "🌱 Web application for Foscan",
+    description: "🌱 Web application for Foscan",
     link: "https://github.com/aarturodev/Foscan-Backend",
     gitHub: "https://github.com/aarturodev/",
     tags: ["Angular", "Typescript", "NodeJs", "SQLServer", "Azure"],
@@ -28,8 +25,7 @@ export const PROJECTS = [
   {
     title: "Quinthecnology",
     logo: "🛠️",
-    description:
-      "🧩 Landing page for Quintechnology",
+    description: "🧩 Landing page for Quintechnology",
     link: "https://www.quintechnologysas.com/",
     gitHub: "https://github.com/aarturodev/",
     tags: ["HTML", "CSS", "Javascript", "Bootstrap", "Hostinger"],
@@ -38,12 +34,10 @@ export const PROJECTS = [
   {
     title: "Blog Personal",
     logo: "🗒️",
-    description:
-      "✨ Personal blog",
+    description: "✨ Personal blog",
     link: "https://foscan.com/",
     gitHub: "https://foscan.com/",
     tags: ["Astro", "Tailwind", "NodeJs", "SQLServer"],
-
   },
 
   {
@@ -54,7 +48,6 @@ export const PROJECTS = [
     link: "https://foscan.com/",
     gitHub: "https://foscan.com/",
     tags: ["React", "Typescript", "MongoDB", "Tailwind", "NodeJs"],
-
   },
   {
     title: "API RESTful",
@@ -160,14 +153,17 @@ export const PROJECTS = [
 
 <section>
   <div class="flex justify-between py-4">
-    <h3 class="text-xl p-2 font-medium">Projects</h3>
+    <h3 class="text-xl p-2 font-medium">Proyectos</h3>
     <a
+      title="Más proyectos"
+      aria-label="More projects"
       class="flex items-center gap-1 -translate-x-3 hover:scale-105 ease-in-out duration-300 text-neutral-500"
       href="/projects"
     >
-      <span class="text-sm">More projects !</span>
-      <!-- <ArrowMas class="size-2" />-->
+      <span class="text-sm"></span>
+      <Arrow class="size-5 rotate-45"/>
     </a>
+    <!-- -->
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     {
@@ -175,6 +171,7 @@ export const PROJECTS = [
         <article class="flex flex-col justify-between border border-neutral-300 rounded-md  h-full relative px-3 shadow-sm hover:bg-[#d4d4d432] transition-all hover:shadow dark:border-neutral-800 ">
           <header class="flex items-center justify-between p-2">
             <a
+            title={"Ir a " + project.title}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -185,10 +182,10 @@ export const PROJECTS = [
                 {project.title}
               </span>
               <span class="opacity-50 duration-200 group-hover:translate-x-[1.5px] group-hover:opacity-100">
-                <Arrow />
               </span>
             </a>
             <a
+            title={project.visibility === "private" ? "Privado" : "Ir a GitHub"}
               aria-label="GitHub"
               href={project.gitHub}
               target="_blank"
@@ -197,11 +194,10 @@ export const PROJECTS = [
             >
               <div class="flex gap-4 items-center ">
                 {project.visibility === "private" ? (
-                 
-                  <Lock class="size-4 font-bold"/> 
-                ) :<GitHub class="size-4" />}
-
-                
+                  <Lock class="size-4 font-bold" />
+                ) : (
+                  <GitHub class="size-4" />
+                )}
               </div>
             </a>
           </header>
