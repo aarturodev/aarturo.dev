@@ -1,20 +1,22 @@
 ---
-import { Image } from "astro:assets";
 import Email from "./icons/Email.astro";
 import GitHub from "./icons/GitHub.astro";
 import Instagram from "./icons/Instagram.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
-import { lazy } from "astro/zod";
+
+import Image from "astro/components/Image.astro";
+
+
 ---
 
 <nav
-  class="container mx-auto px-4 sticky top-0 z-50 mb-1 flex w-full max-w-4xl items-center justify-between py-4 backdrop-blur-md dark:bg-neutral-900/80"
+  class="container mx-auto px-4 sticky top-0 z-50 mb-1 flex w-full max-w-5xl items-center justify-between py-4 backdrop-blur-md dark:bg-neutral-900/80"
 >
   <!-- Enlace principal -->
 
   <a
     href="/"
-    class="ml-4 flex items-center gap-2.5 transition-transform duration-300 hover:scale-105"
+    class=" flex items-center gap-2.5 transition-transform duration-300 hover:scale-105"
     title="Ir a la página principal"
     aria-label="Ir a la página principal"
   >
@@ -26,7 +28,7 @@ import { lazy } from "astro/zod";
         height="40"
         class="h-auto"
       ></Image>
-    <span class="text-sm lg:text-xl">anders<span class="text-[#04B2D9]">on</span>dev</span>
+    <span class="text-sm lg:text-lg">anders<span class="text-[#04B2D9]">on</span>dev</span>
   </a>
 
     <!-- Enlaces a redes sociales -->
@@ -38,7 +40,7 @@ import { lazy } from "astro/zod";
         title="LinkedIn"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all  duration-150 hover:opacity-100 hover:scale-105"
+        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all  duration-150  hover:scale-110"
       >
         <LinkedIn class="size-5" />
       </a>
@@ -50,7 +52,7 @@ import { lazy } from "astro/zod";
         title="GitHub"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:opacity-100 hover:scale-105"
+        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150  hover:scale-110"
       >
         <GitHub class="size-5" />
       </a>
@@ -60,7 +62,7 @@ import { lazy } from "astro/zod";
         title="Email"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:opacity-100 hover:scale-105"
+        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150  hover:scale-110"
       >
         <Email class="size-6" />
       </a>
@@ -71,7 +73,7 @@ import { lazy } from "astro/zod";
         title="Instagram"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:opacity-100 hover:scale-105"
+        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:scale-110"
       >
         <Instagram class="size-6" />
       </a>
