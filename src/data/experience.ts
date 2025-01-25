@@ -8,7 +8,7 @@ export interface Experience {
 
 export const EXPERIENCE : Experience[] = [
     {
-      date: "Actualmente",
+      date: "Noviembre 2024",
       title: "Full Stack Developer",
       empresa: "Movilidad Bogotá",
       link: "https://www.movilidadbogota.gov.co/web/",
@@ -21,6 +21,6 @@ export const EXPERIENCE : Experience[] = [
       empresa: "Foscan",
       link: "https://foscan.com/",
       description:
-        "Desarrollé una aplicación web integral para Foscan, empresa del sector petrolero, gestionando tanto el front-end como el back-end. Utilicé Angular para crear una interfaz de usuario intuitiva y dinámica, mientras que utilizando Node.js implementé la lógica del servidor. Me especialicé en la visualización de datos a través de gráficos interactivos de barras y líneas, facilitando el análisis de información clave para la empresa. Además, integré una base de datos SQL Server en Azure a través de una API personalizada. Esta experiencia me permitió fortalecer mis habilidades técnicas, aportando soluciones innovadoras que contribuyeron directamente al éxito de Foscan.",
+        "Desarrollé una aplicación web para Foscan, empresa del sector petrolero, gestionando tanto el front-end como el back-end. Utilicé Angular para crear una interfaz de usuario intuitiva y dinámica, mientras que utilizando Node.js implementé la lógica del servidor. Me especialicé en la visualización de datos a través de gráficos interactivos de barras y líneas, facilitando el análisis de información clave para la empresa. Además, integré una base de datos SQL Server en Azure a través de una API personalizada. Esta experiencia me permitió fortalecer mis habilidades técnicas, aportando soluciones innovadoras que contribuyeron directamente al éxito de Foscan.",
     },
   ];

@@ -5,8 +5,6 @@ import Instagram from "./icons/Instagram.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 
 import Image from "astro/components/Image.astro";
-
-
 ---
 
 <nav
@@ -16,67 +14,58 @@ import Image from "astro/components/Image.astro";
 
   <a
     href="/"
-    class=" flex items-center gap-2.5 transition-transform duration-300 hover:scale-105"
+    class="flex items-center gap-2.5 transition-transform duration-300 hover:scale-105"
     title="Ir a la página principal"
     aria-label="Ir a la página principal"
   >
-  <Image
-        loading="eager"
-        src="/logo.svg"
-        alt=""
-        width="40"
-        height="40"
-        class="h-auto"
-      ></Image>
-    <span class="text-sm lg:text-lg">anders<span class="text-[#04B2D9]">on</span>dev</span>
+    <span class="text-sm lg:text-lg">anderson.dev</span>
   </a>
 
-    <!-- Enlaces a redes sociales -->
-    <div class="flex items-center space-x-1">
-      <!-- LinkedIn -->
-      <a
-        aria-label="LinkedIn"
-        href="https://www.linkedin.com/in/aarturodev"
-        title="LinkedIn"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all  duration-150  hover:scale-110"
-      >
-        <LinkedIn class="size-5" />
-      </a>
+  <!-- Enlaces a redes sociales -->
+  <div class="flex items-center space-x-1">
+    <!-- LinkedIn -->
+    <a
+      aria-label="LinkedIn"
+      href="https://www.linkedin.com/in/aarturodev"
+      title="LinkedIn"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:scale-110"
+    >
+      <LinkedIn class="size-5" />
+    </a>
 
-      <!-- GitHub -->
-      <a
-        aria-label="GitHub"
-        href="https://github.com/aarturodev"
-        title="GitHub"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150  hover:scale-110"
-      >
-        <GitHub class="size-5" />
-      </a>
-      <a
-        aria-label="Email"
-        href="mailto:andersonarturomarin@gmail.com"
-        title="Email"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150  hover:scale-110"
-      >
-        <Email class="size-6" />
-      </a>
+    <!-- GitHub -->
+    <a
+      aria-label="GitHub"
+      href="https://github.com/aarturodev"
+      title="GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:scale-110"
+    >
+      <GitHub class="size-5" />
+    </a>
+    <a
+      aria-label="Email"
+      href="mailto:andersonarturomarin@gmail.com"
+      title="Email"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:scale-110"
+    >
+      <Email class="size-6" />
+    </a>
 
-      <a
-        aria-label="Instagram"
-        href="https://www.instagram.com/aarturodev/"
-        title="Instagram"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:scale-110"
-      >
-        <Instagram class="size-6" />
-      </a>
-    </div>
-  </a>
+    <a
+      aria-label="Instagram"
+      href="https://www.instagram.com/aarturodev/"
+      title="Instagram"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:scale-110"
+    >
+      <Instagram class="size-6" />
+    </a>
+  </div>
 </nav>
