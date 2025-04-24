@@ -14,7 +14,7 @@ export const PROJECTS : Project[] = [
   {
     title: "Movilidad Bogotá",
     logo: "🗂️",
-    description: "🚀 Web application for Movilidad Bogotá ",
+    description: "🚀 Aplicación web para Movilidad Bogotá ",
     link: "https://www.movilidadbogota.gov.co/web/",
     gitHub: "https://github.com/aarturodev",
     tags: ["Angular", "Typescript", "NodeJs", "SQLServer", "Azure"],
@@ -23,7 +23,7 @@ export const PROJECTS : Project[] = [
   {
     title: "Foscan",
     logo: "📊",
-    description: "🌱 Web application for Foscan",
+    description: "🌱 Aplicación web para Foscan",
     link: "https://github.com/aarturodev/Foscan-Backend",
     gitHub: "https://github.com/aarturodev/",
     tags: ["Angular", "Typescript", "NodeJs", "SQLServer", "Azure"],
@@ -32,7 +32,7 @@ export const PROJECTS : Project[] = [
   {
     title: "Quinthecnology",
     logo: "🛠️",
-    description: "🧩 Landing page for Quintechnology",
+    description: "🧩 Landing page para Quintechnology",
     link: "https://www.quintechnologysas.com/",
     gitHub: "https://github.com/aarturodev/",
     tags: ["HTML", "CSS", "Javascript", "Bootstrap", "Hostinger"],
@@ -41,7 +41,7 @@ export const PROJECTS : Project[] = [
   {
     title: "Blog Personal",
     logo: "🗒️",
-    description: "✨ Personal blog",
+    description: "✨ Blog personal",
     link: "https://foscan.com/",
     gitHub: "https://foscan.com/",
     tags: ["Astro", "Tailwind", "NodeJs", "SQLServer"],
