@@ -1,7 +1,7 @@
 ---
-import { EXPERIENCE} from "../data/experience.ts";
-import type { Experience } from "../data/experience.ts";
-import LineTime from "./LineTime.astro";
+import type { Experience } from '../data/experience.ts';
+import { EXPERIENCE } from '../data/experience.ts';
+import LineTime from './LineTime.astro';
 ---
 
 <section>
@@ -10,10 +10,7 @@ import LineTime from "./LineTime.astro";
     {
       EXPERIENCE.map((experience: Experience) => (
         <li class="mb-10 m-6">
-          <LineTime 
-            data={experience}
-  
-           />
+          <LineTime data={experience} />
         </li>
       ))
     }

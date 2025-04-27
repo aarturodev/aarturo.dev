@@ -1,12 +1,12 @@
 ---
-import CardProject from "./CardProject.astro";
-import Arrow from "./icons/Arrow.astro";
-import {PROJECTS, type Project} from "../data/projects";
+import { PROJECTS, type Project } from '../data/projects';
+import CardProject from './CardProject.astro';
+import Arrow from './icons/Arrow.astro';
 ---
 
 <section>
   <div class="flex justify-between py-4">
-    <h3 class="text-xl p-2 font-medium">Proyectos</h3>
+    <h2 class="text-xl p-2">Proyectos</h2>
     <a
       title="Más proyectos"
       aria-label="More projects"
@@ -14,15 +14,11 @@ import {PROJECTS, type Project} from "../data/projects";
       href="/projects"
     >
       <span class="text-sm"></span>
-      <Arrow class="size-5 rotate-45"/>
+      <Arrow class="size-5 rotate-45" />
     </a>
     <!-- -->
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    {
-      PROJECTS.slice(0, 4).map((project : Project) => (
-       <CardProject project={project} />
-      ))
-    }
+    {PROJECTS.slice(0, 4).map((project: Project) => <CardProject project={project} />)}
   </div>
 </section>

@@ -1,10 +1,10 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import "@fontsource-variable/onest";
+import '@fontsource-variable/onest';
+import { ViewTransitions } from 'astro:transitions';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -12,34 +12,34 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<ViewTransitions></ViewTransitions>
-	</head>
-	<body
-		class="relative flex min-h-screen flex-col py-4 md:py-6 bg-neutral-100/80 dark:bg-neutral-900/80 transition-colors duration-300"
-	>
-		<Header />
-		<slot />
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body
+    class="relative flex min-h-screen flex-col py-4 md:py-6 bg-neutral-100/80 dark:bg-neutral-900/70 transition-colors duration-300"
+  >
+    <Header />
+    <slot />
+    <Footer />
+  </body>
 </html>
 <style is:global>
-	:root {
-		color-scheme: light dark;
-	}
-	html {
-		font-family: "Inter Variable", "Onest Variable", system-ui, sans-serif;
-		scroll-behavior: smooth;
-	}
-	body {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    font-family: 'Inter Variable', 'Onest Variable', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 </style>

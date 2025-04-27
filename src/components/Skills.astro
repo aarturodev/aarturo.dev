@@ -1,30 +1,77 @@
 ---
-import Angular from "./icons/Angular.astro";
-import AstroIcon from "./icons/AstroIcon.astro";
-import C from "./icons/C.astro";
-import Css from "./icons/Css.astro";
-import Git from "./icons/Git.astro";
-import GitHub from "./icons/GitHub.astro";
-import Html from "./icons/Html.astro";
-import Javascript from "./icons/Javascript.astro";
-import Mongo from "./icons/Mongo.astro";
-import Mysql from "./icons/Mysql.astro";
-import SqlServer from "./icons/SqlServer.astro";
-import Tailwind from "./icons/Tailwind.astro";
-import Typescript from "./icons/Typescript.astro";
-import Node from "./icons/Node.astro";
-
+import Angular from './icons/Angular.astro';
+import AstroIcon from './icons/AstroIcon.astro';
+import Azure from './icons/Azure.astro';
+import C from './icons/C.astro';
+import Css from './icons/Css.astro';
+import Docker from './icons/Docker.astro';
+import Express from './icons/Express.astro';
+import FastApi from './icons/FastApi.astro';
+import Figma from './icons/Figma.astro';
+import Git from './icons/Git.astro';
+import GitHub from './icons/GitHub.astro';
+import Html from './icons/Html.astro';
+import Javascript from './icons/Javascript.astro';
+import Jwt from './icons/Jwt.astro';
+import Laravel from './icons/Laravel.astro';
+import Mongo from './icons/Mongo.astro';
+import Mysql from './icons/Mysql.astro';
+import Nestjs from './icons/Nestjs.astro';
+import Node from './icons/Node.astro';
+import Php from './icons/Php.astro';
+import Pm2 from './icons/Pm2.astro';
+import Postgres from './icons/Postgres.astro';
+import Python from './icons/Python.astro';
+import SqlServer from './icons/SqlServer.astro';
+import Supabase from './icons/Supabase.astro';
+import Swager from './icons/Swager.astro';
+import Tailwind from './icons/Tailwind.astro';
+import Typescript from './icons/Typescript.astro';
+import Unity from './icons/Unity.astro';
 const skills = [
-  { name: "Astro", icon: "AstroIcon" },
-  { name: "Angular", icon: "Angular" },
-  { name: "Tailwind", icon: "Tailwind" },
-  { name: "NodeJs", icon: "Node" },
-  { name: "SQLServer", icon: "SqlServer" },
-  { name: "MySQL", icon: "Mysql" },
-  { name: "MongoDB", icon: "Mongo" },
-  { name: "Git", icon: "Git" },
-  { name: "GitHub", icon: "GitHub" },
-  { name: "C++", icon: "C" },
+  // Frameworks principales
+  { name: 'Angular', icon: 'Angular' },
+  { name: 'Nestjs', icon: 'Nestjs' },
+  { name: 'Astro', icon: 'AstroIcon' },
+  { name: 'FastAPI', icon: 'FastApi' },
+  { name: 'Express', icon: 'Express' },
+
+  // Librerías y Estilos
+  { name: 'Tailwind', icon: 'Tailwind' },
+
+  // Backend / Infraestructura
+  { name: 'NodeJs', icon: 'Node' },
+  { name: 'Docker', icon: 'Docker' },
+  { name: 'Swagger', icon: 'Swager' },
+  { name: 'JWT', icon: 'Jwt' },
+  { name: 'Azure', icon: 'Azure' },
+  { name: 'PM2', icon: 'Pm2' },
+
+  // Bases de Datos
+  { name: 'MongoDB', icon: 'Mongo' },
+  { name: 'SQLServer', icon: 'SqlServer' },
+  { name: 'MySQL', icon: 'Mysql' },
+  { name: 'PostgreSQL', icon: 'Postgres' },
+  { name: 'Supabase', icon: 'Supabase' },
+
+  // Versionamiento y colaboración
+  { name: 'Git', icon: 'Git' },
+  { name: 'GitHub', icon: 'GitHub' },
+
+  // Diseño y prototipado
+  { name: 'Figma', icon: 'Figma' },
+
+  // Frontend básico
+  { name: 'HTML', icon: 'Html' },
+  { name: 'CSS', icon: 'Css' },
+  { name: 'JavaScript', icon: 'Javascript' },
+  { name: 'TypeScript', icon: 'Typescript' },
+  { name: 'PHP', icon: 'Php' },
+  { name: 'Laravel', icon: 'Laravel' },
+
+  // Otros
+  { name: 'C++', icon: 'C' },
+  { name: 'Unity', icon: 'Unity' },
 ];
 
 const SKILL_ICONS: Record<string, any> = {
@@ -42,24 +89,43 @@ const SKILL_ICONS: Record<string, any> = {
   Git,
   GitHub,
   C,
+  Nestjs,
+  Docker,
+  Jwt,
+  Laravel,
+  FastApi,
+  Express,
+  Unity,
+  Swager,
+  Php,
+  Figma,
+  Azure,
+  Python,
+  Postgres,
+  Supabase,
+  Pm2,
 };
 ---
 
 <section>
   <h3 class="text-xl py-6 font-medium">Habilidades</h3>
-  <div
-    class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6"
-  >
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-6">
     {
       skills.map(({ icon, name }) => {
         const Icon = SKILL_ICONS[icon];
         return (
           <div class="group">
-            <div class="relative bg-white dark:text-black  rounded-xl shadow dark:shadow-slate-800 p-4 transition-all duration-300 ease-in-out transform group-hover:-translate-y-1 group-hover:shadow dark:group-hover:shadow-slate-500 overflow-hidden">
-              <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300" />
+            <div class="relative bg-white dark:text-black rounded-xl shadow dark:shadow-slate-800 p-4 transition-all duration-300 ease-in-out transform group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-lg dark:group-hover:shadow-slate-500 overflow-hidden">
+              {/* Background decorativo */}
+              <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-black/10 dark:from-slate-800/20 dark:to-slate-900/10 blur-sm" />
+
+              {/* Icono y texto */}
               <div class="relative z-10 flex flex-col items-center">
                 <Icon class="size-8 mb-3 text-gray-700 dark:text-white transition-colors duration-300" />
-                <p class="text-center text-xm text-gray-800 transition-colors duration-300 dark:text-neutral-300">
+                <p
+                  class="text-center text-xm text-gray-800 dark:text-neutral-300"
+                  aria-label={name}
+                >
                   {name}
                 </p>
               </div>
