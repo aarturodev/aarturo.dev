@@ -11,24 +11,7 @@ export type Project = {
 
 
 export const PROJECTS : Project[] = [
-  {
-    title: "Movilidad Bogotá",
-    logo: "🗂️",
-    description: "🚀 Aplicación web para Movilidad Bogotá ",
-    link: "https://www.movilidadbogota.gov.co/web/",
-    gitHub: "https://github.com/aarturodev",
-    tags: ["Angular", "Typescript", "NodeJs", "SQLServer", "Azure"],
-    visibility: "private",
-  },
-  {
-    title: "Foscan",
-    logo: "📊",
-    description: "🌱 Aplicación web para Foscan",
-    link: "https://github.com/aarturodev/Foscan-Backend",
-    gitHub: "https://github.com/aarturodev/",
-    tags: ["Angular", "Typescript", "NodeJs", "SQLServer", "Azure"],
-    visibility: "private",
-  },
+
   {
     title: "Quinthecnology",
     logo: "🛠️",
