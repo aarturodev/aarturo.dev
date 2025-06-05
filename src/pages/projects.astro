@@ -1,10 +1,13 @@
 ---
 
 import {PROJECTS, type Project} from "../data/projects";
+import {COURSES, type Course }from "../data/courses";
 import SectionContainer from "../components/SectionContainer.astro";
 import CardProject from "../components/CardProject.astro";
 
 import Layout from "../layouts/Layout.astro";
+import CardCourses from "../components/CardCourses.astro";
+import type { Code } from "astro:components";
 
 ---
 
@@ -17,6 +20,18 @@ import Layout from "../layouts/Layout.astro";
           {
             PROJECTS.map((project:Project) => (
               <CardProject project={project} />
+            ))
+          }
+        </div>
+      </section>
+    </SectionContainer>
+     <SectionContainer>
+      <section>
+        <h3 class="text-xl py-4 font-medium">Todos los cursos</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {
+            COURSES.map((course:Course) => (
+              <CardCourses {...course} />
             ))
           }
         </div>

@@ -1,34 +1,118 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
+import Location from "./icons/Location.astro";
 ---
 
-<section class="bg-neutral-100/80 dark:bg-neutral-900/80 dark:text-neutral-300 py-16">
-  <div class="max-w-5xl mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12">
-    <div class="text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white mb-6">
-        Hola, soy Anderson 🚀
-      </h1>
+<section class="dark:bg-gray-900 relative overflow-hidden">
+  <div class="container mx-auto px-4 lg:py-4 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+      <!-- Content Section -->
+      <div class="space-y-8 text-center lg:text-left">
+        <!-- Location Badge -->
+        <div class="flex justify-center lg:justify-start">
+          <span
+            class="border-none inline-flex items-center rounded-md border border-gray-300 bg-gray-100 text-gray-700 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 px-3 py-1 text-sm font-mono"
+          >
+            <Location class="mx-3" /> Chía, Cundinamarca
+          </span>
+        </div>
 
-      <p class="text-lg md:text-xl font-light dark:text-neutral-400">
-        Soy desarrollador de Bogotá, Colombia, estudiante de Ingeniería de Sistemas y Computación, y
-        miembro del programa Expert en Platzi. Me apasiona crear soluciones modernas, optimizadas y
-        de alto rendimiento, siempre en busca de nuevos desafíos para crecer profesionalmente.
-      </p>
-    </div>
+        <!-- Main Heading -->
+        <div class="space-y-4">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white"
+          >
+            Hola, soy <span class="text-blue-700 dark:text-blue-400"
+              >Anderson
+            </span>
+          </h1>
 
-    <div class="flex justify-center">
-      <div class="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden shadow-lg">
-        <Image
-          src="https://avatars.githubusercontent.com/u/83318404?s=400&u=774ed4c9633931c24f6f521ec53a52629de29aea&v=4"
-          alt="Anderson - Desarrollador Fullstack"
-          class="w-full h-full object-cover"
-          loading="eager"
-          width={300}
-          height={300}
-          aria-label="Anderson - Desarrollador Fullstack"
-          title="Anderson - Desarrollador Fullstack"
-        />
+          <div class="space-y-2">
+            <h2
+              class="text-xl md:text-2xl font-semibold text-gray-700 dark:text-gray-300"
+            >
+              Desarrollador de Software
+            </h2>
+
+            <!-- Badges -->
+            <div
+              class="flex flex-wrap gap-2 justify-center items-center lg:justify-start"
+            >
+              <span
+                id="badge-ingenieria"
+                class="flex justify-center items-center rounded-xl bg-blue-300 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300"
+              >
+                <span class="text-2xl">🎓</span><span
+                  >Ingeniero de Sistemas y Computación</span
+                >
+              </span>
+              <span
+                id="badge-platzi"
+                class="rounded-xl bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-sm dark:bg-green-900 dark:text-green-300"
+              >
+                Extudiante de Platzi
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <p
+          class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl"
+        >
+          Me apasiona crear <span
+            class="font-semibold text-gray-800 dark:text-white"
+            >soluciones modernas</span
+          >,
+          <span class="font-semibold text-gray-800 dark:text-white">
+            optimizadas</span
+          > y de
+          <span class="font-semibold text-gray-800 dark:text-white">
+            alto rendimiento</span
+          >. Siempre en busca de nuevos desafíos para crecer profesionalmente.
+        </p>
+        <!-- Botón para descargar CV -->
+        <div class="pt-4 flex justify-center lg:justify-start">
+          <a
+            href="/cv.pdf"
+            download
+            class="inline-flex items-center px-6 py-3 text-sm font-medium rounded-md shadow-md hover:bg-blue-700 transition dark:bg-blue-500 dark:hover:bg-blue-600"
+          >
+          Descargar CV
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="flex justify-center lg:justify-end">
+        <div class="relative">
+          <div
+            class="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden dark:border-gray-800 lg:shadow-lg shadow-none bg-gray-100 dark:bg-gray-800"
+          >
+            <Image
+              src="https://scontent-bog2-1.xx.fbcdn.net/v/t39.30808-6/472743159_3861750127473332_1872976352600686141_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEKiIZxnXi0ytlbPji2uPd844jbbmHCGoLjiNtuYcIagoNzoO098hJdx2yVlklHGI491eYSepNIT73F67azg6oh&_nc_ohc=EKLlZ7i3nvgQ7kNvwEmIMAX&_nc_oc=AdnZL2lzAYws54iIgkCWGXRvcPjG65b0_3YGObCpuPzoZGcou5Mf63I72UFmHp6ygs4&_nc_zt=23&_nc_ht=scontent-bog2-1.xx&_nc_gid=DwPu-iyixNT08qG0qwuiAw&oh=00_AfJGDcgEnnTm4z-Y7M3Ddb5xpxWg-d1qlm3SP9RSEnEiaQ&oe=68467FA9"
+              alt="Anderson - Desarrollador Fullstack"
+              class="w-full h-full object-cover rounded-full"
+              loading="eager"
+              width={300}
+              height={300}
+              aria-label="Anderson - Desarrollador Fullstack"
+              title="Anderson - Desarrollador Fullstack"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  #badge-ingenieria {
+    background-color: #dbeafe; /* Light blue */
+    color: #1e40af; /* Dark blue */
+  }
+  #badge-platzi {
+    background-color: #d1fae5; /* Light green */
+    color: #065f46; /* Dark green */
+  }
+</style>

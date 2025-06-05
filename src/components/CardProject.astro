@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+// Ya no importamos Image
 import type { Project } from '../data/projects';
 import GitHub from './icons/GitHub.astro';
 import Lock from './icons/Lock.astro';
@@ -8,37 +8,26 @@ type Props = {
   project: Project;
 };
 
-const { title, description, tags, logo, link, gitHub, visibility } = Astro.props.project;
+const { logo,title, description, tags, link, gitHub, visibility } = Astro.props.project;
 ---
 
 <article
-  class="flex flex-col justify-between border border-neutral-300 dark:border-neutral-800 rounded-md overflow-hidden h-full relative dark:bg-neutral-900 shadow-sm hover:shadow-md hover:scale-105 transition-all"
+  class="flex flex-col justify-between border border-neutral-300 dark:border-neutral-800 rounded-md overflow-hidden h-full relative dark:bg-neutral-900 shadow hover:shadow-lg hover:scale-[1.02] transition-transform duration-200"
 >
-  <Image
-    src={logo}
-    alt={title}
-    aria-label={title}
-    width={300}
-    height={200}
-    loading="eager"
-    class="w-full h-40 object-cover bg-neutral-200 dark:bg-neutral-700"
-  />
-
-  <div class="flex flex-col flex-1 dark:bg-neutral-900">
-    <header class="flex items-center justify-between p-4">
+  <div class="flex flex-col flex-1 p-4 gap-2">
+    <header class="flex items-center justify-between mb-2">
+     <div class="flex items-center gap-3">
+        <div class="text-3xl">{logo}</div>
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-[6px] font-medium decoration-neutral-500 hover:decoration-neutral-700 dark:decoration-neutral-400"
+        class="text-lg font-semibold text-neutral-800 dark:text-slate-200 hover:underline underline-offset-4 decoration-dotted"
         aria-label={title}
       >
-        <span
-          class="text-lg text-neutral-800 dark:text-slate-300 decoration-dotted underline-offset-[7px] hover:underline"
-        >
-          {title}
-        </span>
+        {title}
       </a>
+     </div>
 
       <a
         href={gitHub}
@@ -57,14 +46,14 @@ const { title, description, tags, logo, link, gitHub, visibility } = Astro.props
       </a>
     </header>
 
-    <p class="text-sm px-4 pb-2 text-neutral-700 dark:text-neutral-300 truncate">
+    <p class="text-sm text-neutral-700 dark:text-neutral-300 line-clamp-3">
       {description}
     </p>
 
-    <footer class="flex flex-wrap items-center p-2 gap-2 overflow-x-clip scroll-custom">
+    <footer class="flex flex-wrap items-center gap-2 mt-auto pt-2">
       {
         tags.map((tag) => (
-          <span class="inline-flex min-w-max cursor-default items-center space-x-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-neutral-200/50 dark:bg-neutral-800/60 px-2 py-1 font-mono text-xs font-medium text-neutral-700 dark:text-neutral-300">
+          <span class="inline-flex min-w-max items-center rounded-md border border-neutral-300 dark:border-neutral-700 bg-neutral-200/50 dark:bg-neutral-800/60 px-2 py-1 font-mono text-xs text-neutral-700 dark:text-neutral-300">
             {tag}
           </span>
         ))
