@@ -106,24 +106,30 @@ const SKILL_ICONS: Record<string, any> = {
   Pm2,
 };
 ---
-
 <section>
-  <h3 class="text-xl py-6 font-medium">Habilidades</h3>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-6">
+  <h3 class="text-xl py-6 font-medium text-neutral-800 dark:text-neutral-100">Habilidades</h3>
+
+  <div class="grid grid-cols-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-6">
     {
       skills.map(({ icon, name }) => {
         const Icon = SKILL_ICONS[icon];
         return (
           <div class="group">
-            <div class="relative bg-white dark:text-black rounded-xl shadow dark:shadow-slate-800 p-4 transition-all duration-300 ease-in-out transform group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-lg dark:group-hover:shadow-slate-500 overflow-hidden">
-              {/* Background decorativo */}
-              <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-black/10 dark:from-slate-800/20 dark:to-slate-900/10 blur-sm" />
+            <div
+              class="relative rounded-xl bg-neutral-100 dark:bg-neutral-400 p-4 shadow-md dark:shadow-sm 
+                         transition-all duration-300 ease-in-out transform group-hover:-translate-y-1 
+                         group-hover:scale-[1.03] group-hover:shadow-lg dark:group-hover:shadow-black/5"
+            >
+              {/* Decoración sutil */}
+              <div class="absolute inset-0 z-0 pointer-events-none 
+                          bg-gradient-to-br from-white/20 to-neutral-200/10 
+                          dark:from-neutral-300/10 dark:to-neutral-500/10 blur-sm rounded-xl" />
 
-              {/* Icono y texto */}
+              {/* Contenido */}
               <div class="relative z-10 flex flex-col items-center">
-                <Icon class="size-8 mb-3 text-gray-700 dark:text-white transition-colors duration-300" />
+                <Icon class="size-8 mb-2 text-neutral-700 dark:text-neutral-900 transition-colors duration-300" />
                 <p
-                  class="text-center text-xm text-gray-800 dark:text-neutral-300"
+                  class="text-center text-xs font-medium text-neutral-800 dark:text-neutral-900"
                   aria-label={name}
                 >
                   {name}
@@ -136,3 +142,6 @@ const SKILL_ICONS: Record<string, any> = {
     }
   </div>
 </section>
+
+
+

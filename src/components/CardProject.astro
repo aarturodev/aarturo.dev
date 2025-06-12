@@ -1,5 +1,4 @@
 ---
-// Ya no importamos Image
 import type { Project } from '../data/projects';
 import GitHub from './icons/GitHub.astro';
 import Lock from './icons/Lock.astro';
@@ -8,32 +7,34 @@ type Props = {
   project: Project;
 };
 
-const { logo,title, description, tags, link, gitHub, visibility } = Astro.props.project;
+const { logo, title, description, tags, link, gitHub, visibility } = Astro.props.project;
 ---
 
 <article
   class="flex flex-col justify-between border border-neutral-300 dark:border-neutral-800 rounded-md overflow-hidden h-full relative dark:bg-neutral-900 shadow hover:shadow-lg hover:scale-[1.02] transition-transform duration-200"
 >
   <div class="flex flex-col flex-1 p-4 gap-2">
+    <!-- Header con título y logo -->
     <header class="flex items-center justify-between mb-2">
-     <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3">
         <div class="text-3xl">{logo}</div>
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-lg font-semibold text-neutral-800 dark:text-slate-200 hover:underline underline-offset-4 decoration-dotted"
-        aria-label={title}
-      >
-        {title}
-      </a>
-     </div>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-lg font-semibold text-neutral-800 dark:text-slate-200 hover:underline underline-offset-4 decoration-dotted"
+          aria-label={title}
+        >
+          {title}
+        </a>
+      </div>
 
       <a
         href={gitHub}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
+        title="Repositorio de GitHub"
         class="hover:opacity-80 transition-opacity"
       >
         {
@@ -46,18 +47,54 @@ const { logo,title, description, tags, link, gitHub, visibility } = Astro.props.
       </a>
     </header>
 
+    <!-- Descripción -->
     <p class="text-sm text-neutral-700 dark:text-neutral-300 line-clamp-3">
       {description}
     </p>
 
-    <footer class="flex flex-wrap items-center gap-2 mt-auto pt-2">
-      {
-        tags.map((tag) => (
-          <span class="inline-flex min-w-max items-center rounded-md border border-neutral-300 dark:border-neutral-700 bg-neutral-200/50 dark:bg-neutral-800/60 px-2 py-1 font-mono text-xs text-neutral-700 dark:text-neutral-300">
-            {tag}
-          </span>
-        ))
-      }
-    </footer>
+    <!-- Tags con scroll horizontal oculto -->
+    <footer
+  class="w-full overflow-x-auto flex flex-nowrap items-center gap-2 mt-auto pt-2 px-1 custom-scrollbar"
+>
+  {
+    tags.map((tag) => (
+      <span
+        class="inline-flex mb-2 min-w-max items-center rounded-md border border-neutral-300 dark:border-neutral-700 
+               bg-neutral-200/50 dark:bg-neutral-800/60 px-2 py-1 font-mono text-xs 
+               text-neutral-700 dark:text-neutral-300 whitespace-nowrap"
+      >
+        {tag}
+      </span>
+    ))
+  }
+</footer>
+
   </div>
 </article>
+
+<style>
+  .custom-scrollbar {
+  scrollbar-width: thin;            /* Firefox */
+  scrollbar-color: #a3a3a3 transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 1px;                      /* Altura muy pequeña */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #a3a3a3;        /* Gris neutro (Tailwind: neutral-400) */
+  border-radius: 1px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #52525b;      /* Tailwind dark neutral-600 */
+  }
+}
+
+</style>
