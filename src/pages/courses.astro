@@ -11,16 +11,16 @@ import type { Code } from "astro:components";
 
 ---
 
-<Layout title="Anderson Marin - Proyectos">
+<Layout title="Anderson Marin - Cursos">
   <main class="relative flex min-h-screen flex-col py-6 md:py-10">
 
     <SectionContainer>
-      <section>
-        <h3 class="text-2xl font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Todos los proyectos</h3>
+      <section >
+        <h3 class="text-2xl font-semibold text-neutral-800 dark:text-neutral-100 mb-4">Todos los cursos</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {
-            PROJECTS.map((project: Project) => (
-              <CardProject project={project} />
+            COURSES.map((course: Course) => (
+              <CardCourses {...course} />
             ))
           }
         </div>
