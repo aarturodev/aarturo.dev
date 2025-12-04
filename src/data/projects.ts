@@ -1,73 +1,82 @@
-
 export type Project = {
-    title: string;
-    logo: string;
-    description: string;
-    link: string;
-    gitHub: string;
-    visibility?: string;
-    tags: string[];
-  };
+  title: string;
+  logo: string;
+  description: string;
+  link: string;
+  gitHub: string;
+  visibility?: string;
+  tags: string[];
+};
 
-
-export const PROJECTS : Project[] = [
-
+export const PROJECTS: Project[] = [
   {
-    title: "Quinthecnology",
-    logo: "🧩",
-    description: "Diseño, desarrollo y despliege de aplicación web para Quinthecnology S.A.S.",
-    link: "https://www.quintechnologysas.com/",
-    gitHub: "https://github.com/aarturodev/",
-    tags: ["HTML", "CSS", "Javascript", "Bootstrap", "Hostinger"],
-  },
-
-  {
-    title: "Estación Meteorológica",
-    logo: "🔌",
+    title: 'PulsePay',
+    logo: '💳',
     description:
-      "API RESTful para una estación metereologica, con datos extraidos desde una implementacion IoT ",
-    link: "",
-    gitHub: "https://github.com/aarturodev/API.git",
-    tags: ["Express", "SQLServer", "node-red", "ESP32", "IoT"],
+      'Pasarela de pagos con onboarding KYC, panel de comercio y webhooks para notificaciones en tiempo real.',
+    link: 'https://pulsepay.app/demo',
+    gitHub: 'https://github.com/aarturodev/pulsepay',
+    visibility: 'private',
+    tags: ['Node.js', 'NestJS', 'PostgreSQL', 'Stripe', 'TailwindCSS'],
   },
   {
-    title: "Finanzas Personales",
-    logo: "📊",
+    title: 'Quintechnology',
+    logo: '🧩',
     description:
-      "Aplicacion web para el manejo de finanzas personales, con registro de ingresos y gastos, y metas de ahorro.",
-    link: "",
-    gitHub: "https://github.com/aarturodev/Sistema-Financiero.git",
-    tags: ["laravel", "React", "MySQL", "Inertia", "TailwindCSS", "Vite"],
+      'Sitio web corporativo para Quintechnology con página de servicios, blog y panel de contenido optimizado para SEO.',
+    link: 'https://www.quintechnologysas.com/',
+    gitHub: 'https://github.com/aarturodev/',
+    visibility: 'private',
+    tags: ['Astro', 'TailwindCSS', 'SEO', 'Vercel'],
   },
   {
-    title: "Analista de Datos",
-    logo: "📈",
+    title: 'Atlas Analytics',
+    logo: '📈',
     description:
-      "Portafoloio web para un analista de datos, con proyectos y habilidades destacadas.", 
-    link: "https://github.com/aarturodev/lsofia.dev.git",
-    gitHub: "",
-    tags: ["Astro", "TailwindCSS"],
+      'Dashboard de métricas multi-tenant con ETL ligero, reportes PDF y alertas configurables.',
+    link: 'https://atlas-analytics.app',
+    gitHub: 'https://github.com/aarturodev/atlas-analytics',
+    visibility: 'private',
+    tags: ['Astro', 'React', 'Supabase', 'Prisma', 'Vercel'],
   },
   {
-    title: "Car IoT",
-    logo: "🚗",
-  
+    title: 'Nómada',
+    logo: '🧭',
     description:
-      "Controlador de un vehículo con ESP32, por IoT, con dashboard de control y monitoreo.",
-    link: "",
-    gitHub: "https://github.com/aarturodev/Car-IoT.git",
-    tags: ["ESP32", "IoT", "Node-RED", "C++", "protocolo MQTT", "Mosquitto"],
-    },
-    {
-    title: "Survey App",
-    logo: "📋",
-    description:
-      "API RESTful para la creación y gestión de encuestas en tiempo real usando WebSockets.",
-    link: "",
-    gitHub: "https://github.com/aarturodev/survey-project.git",
-    tags: ["Node.js", "Express", "Socket.io", "MongoDB", "EJS", "TailwindCSS"],
+      'App para nómadas digitales con mapas offline, recomendaciones locales y espacio de comunidad.',
+    link: '',
+    gitHub: 'https://github.com/aarturodev/nomada-app',
+    visibility: 'private',
+    tags: ['Angular', 'Capacitor', 'Node.js', 'MongoDB'],
   },
-
-  
+  {
+    title: 'Sfera Docs',
+    logo: '🗂️',
+    description:
+      'Sistema de gestión documental con versionado, firmas y búsqueda semántica.',
+    link: '',
+    gitHub: 'https://github.com/aarturodev/sfera-docs',
+    visibility: 'private',
+    tags: ['Express', 'TypeScript', 'Azure Blob', 'JWT', 'Swagger'],
+  },
+  {
+    title: 'GrowShop',
+    logo: '🛒',
+    description:
+      'Ecommerce headless con catálogo inteligente, checkout optimizado y panel de inventario.',
+    link: 'https://growshop.dev',
+    gitHub: 'https://github.com/aarturodev/growshop',
+    visibility: 'private',
+    tags: ['Next.js', 'TailwindCSS', 'PostgreSQL', 'Redis'],
+  },
+  {
+    title: 'IoT Fleet',
+    logo: '🚚',
+    description:
+      'Monitoreo de flotas IoT con MQTT, dashboards en vivo y alertas de mantenimiento.',
+    link: '',
+    gitHub: 'https://github.com/aarturodev/iot-fleet',
+    visibility: 'private',
+    tags: ['ESP32', 'MQTT', 'NestJS', 'TimescaleDB', 'WebSockets'],
+  },
 ];
-

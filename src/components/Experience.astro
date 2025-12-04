@@ -1,18 +1,54 @@
 ---
 import type { Experience } from '../data/experience.ts';
 import { EXPERIENCE } from '../data/experience.ts';
-import LineTime from './LineTime.astro';
 ---
 
-<section>
-  <h3 class="text-xl py-4 font-medium">Experiencia</h3>
-  <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
-    {
-      EXPERIENCE.map((experience: Experience) => (
-        <li class="mb-10 m-6">
-          <LineTime data={experience} />
-        </li>
-      ))
-    }
-  </ol>
+<section
+  id="experiencia"
+  class="w-full px-4 min-h-screen flex items-center snap-start"
+>
+  <div class="flex w-full max-w-5xl flex-col gap-5 rounded-2xl p-6">
+    <header class="pb-3">
+      <p
+        class="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400"
+      >
+        Trayectoria
+      </p>
+      <h3 class="text-4xl font-semibold tracking-tight text-neutral-900">
+        Experiencia profesional
+      </h3>
+    </header>
+
+    <div
+      class="relative space-y-4 before:absolute before:left-[9px] before:top-0 before:h-full before:w-px before:bg-neutral-200 before:content-[''] dark:before:bg-neutral-700"
+    >
+      {
+        EXPERIENCE.slice(0, 2).map((experience: Experience) => (
+          <article class="relative ml-6 flex h-full flex-col gap-3 rounded-2xl bg-white p-5 shadow-[0_20px_60px_-48px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-[1px] dark:bg-neutral-900">
+            <span
+              class="absolute left-[-22px] top-6 h-3 w-3 rounded-full bg-neutral-900 ring-4 ring-white dark:bg-neutral-100 dark:ring-neutral-900"
+              aria-hidden="true"
+            />
+            <header class="flex items-start justify-between">
+              <div class="space-y-0.5">
+                <h4 class="text-sm sm:text-base font-semibold text-neutral-900 transition hover:text-neutral-600 dark:text-neutral-50 dark:hover:text-neutral-200">
+                  {experience.title}
+                </h4>
+                <p class="text-[11px] sm:text-xs text-neutral-500 dark:text-neutral-400">
+                  {experience.empresa}
+                </p>
+              </div>
+              <span class="hidden sm:inline-flex rounded-full border border-neutral-200 px-2.5 py-1 text-[11px] font-semibold text-neutral-700 dark:border-neutral-700 dark:text-neutral-200">
+                {experience.date}
+              </span>
+            </header>
+
+            <p class="text-[13px] sm:text-sm leading-relaxed text-neutral-700 line-clamp-3 dark:text-neutral-300">
+              {experience.description}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
 </section>

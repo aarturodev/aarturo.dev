@@ -1,69 +1,48 @@
 ---
-import Email from './icons/Email.astro';
-import GitHub from './icons/GitHub.astro';
-import Instagram from './icons/Instagram.astro';
-import LinkedIn from './icons/LinkedIn.astro';
+
 ---
 
 <nav
-  class="container mx-auto px-4 sticky top-0 z-50 mb-1 flex w-full max-w-5xl items-center justify-between py-4 backdrop-blur-md dark:bg-neutral-900/80"
+  class="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-xl shadow-[0_20px_60px_-50px_rgba(0,0,0,0.45)] dark:bg-neutral-950/70"
 >
-  <!-- Enlace principal -->
-
-  <a
-    href="/"
-    class="flex items-center gap-2.5 transition-transform duration-300 hover:scale-105"
-    title="Ir a la página principal"
-    aria-label="Ir a la página principal"
-  >
-    <span class="text-sm lg:text-lg">anderson.dev</span>
-  </a>
-
-  <!-- Enlaces a redes sociales -->
-  <div class="flex items-center space-x-1">
-    <!-- LinkedIn -->
+  <div class="mx-auto flex w-full max-w-4xl items-center justify-between py-3">
     <a
-      aria-label="LinkedIn"
-      href="https://www.linkedin.com/in/aarturodev"
-      title="LinkedIn"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:scale-110"
+      href="/"
+      class="flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-50"
+      aria-label="Inicio"
     >
-      <LinkedIn class="size-5" />
+      <span
+        class="flex h-9 w-9 items-center justify-center rounded-2xl bg-neutral-900 text-white shadow-[0_14px_28px_-18px_rgba(0,0,0,0.4)]"
+        >AM</span
+      >
     </a>
-
-    <!-- GitHub -->
-    <a
-      aria-label="GitHub"
-      href="https://github.com/aarturodev"
-      title="GitHub"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:scale-110"
+    <div
+      class="hidden items-center gap-1 rounded-full bg-white/70 px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-600 shadow-[0_14px_28px_-22px_rgba(0,0,0,0.3)] dark:bg-neutral-900/70 dark:text-neutral-200 md:flex"
     >
-      <GitHub class="size-5" />
-    </a>
-    <a
-      aria-label="Email"
-      href="mailto:andersonarturomarin@gmail.com"
-      title="Email"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:scale-110"
-    >
-      <Email class="size-6" />
-    </a>
-
-    <a
-      aria-label="Instagram"
-      href="https://www.instagram.com/aarturodev/"
-      title="Instagram"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center space-x-3 justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-700 focus-visible:ring-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 h-9 w-9 opacity-80 transition-all duration-150 hover:scale-110"
-    >
-      <Instagram class="size-6" />
-    </a>
+      <a
+        class="rounded-full px-3 py-2 transition hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50"
+        href="/">Inicio</a
+      >
+      <a
+        class="rounded-full px-3 py-2 transition hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50"
+        href="#habilidades">Skills</a
+      >
+      <a
+        class="rounded-full px-3 py-2 transition hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50"
+        href="/#proyectos">Proyectos</a
+      >
+      <a
+        class="rounded-full px-3 py-2 transition hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50"
+        href="#cursos">Cursos</a
+      >
+      <a
+        class="rounded-full px-3 py-2 transition hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50"
+        href="/#experiencia">Experiencia</a
+      >
+      <a
+        class="rounded-full px-3 py-2 transition hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50"
+        href="/#educacion">Educación</a
+      >
+    </div>
   </div>
 </nav>

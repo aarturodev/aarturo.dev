@@ -1,147 +1,49 @@
 ---
-import Angular from './icons/Angular.astro';
-import AstroIcon from './icons/AstroIcon.astro';
-import Azure from './icons/Azure.astro';
-import C from './icons/C.astro';
-import Css from './icons/Css.astro';
-import Docker from './icons/Docker.astro';
-import Express from './icons/Express.astro';
-import FastApi from './icons/FastApi.astro';
-import Figma from './icons/Figma.astro';
-import Git from './icons/Git.astro';
-import GitHub from './icons/GitHub.astro';
-import Html from './icons/Html.astro';
-import Javascript from './icons/Javascript.astro';
-import Jwt from './icons/Jwt.astro';
-import Laravel from './icons/Laravel.astro';
-import Mongo from './icons/Mongo.astro';
-import Mysql from './icons/Mysql.astro';
-import Nestjs from './icons/Nestjs.astro';
-import Node from './icons/Node.astro';
-import Php from './icons/Php.astro';
-import Pm2 from './icons/Pm2.astro';
-import Postgres from './icons/Postgres.astro';
-import Python from './icons/Python.astro';
-import SqlServer from './icons/SqlServer.astro';
-import Supabase from './icons/Supabase.astro';
-import Swager from './icons/Swager.astro';
-import Tailwind from './icons/Tailwind.astro';
-import Typescript from './icons/Typescript.astro';
-import Unity from './icons/Unity.astro';
-const skills = [
-  // Frameworks principales
-  { name: 'Angular', icon: 'Angular' },
-  { name: 'Nestjs', icon: 'Nestjs' },
-  { name: 'Astro', icon: 'AstroIcon' },
-  { name: 'FastAPI', icon: 'FastApi' },
-  { name: 'Express', icon: 'Express' },
-
-  // Librerías y Estilos
-  { name: 'Tailwind', icon: 'Tailwind' },
-
-  // Backend / Infraestructura
-  { name: 'NodeJs', icon: 'Node' },
-  { name: 'Docker', icon: 'Docker' },
-  { name: 'Swagger', icon: 'Swager' },
-  { name: 'JWT', icon: 'Jwt' },
-  { name: 'Azure', icon: 'Azure' },
-  { name: 'PM2', icon: 'Pm2' },
-
-  // Bases de Datos
-  { name: 'MongoDB', icon: 'Mongo' },
-  { name: 'SQLServer', icon: 'SqlServer' },
-  { name: 'MySQL', icon: 'Mysql' },
-  { name: 'PostgreSQL', icon: 'Postgres' },
-  { name: 'Supabase', icon: 'Supabase' },
-
-  // Versionamiento y colaboración
-  { name: 'Git', icon: 'Git' },
-  { name: 'GitHub', icon: 'GitHub' },
-
-  // Diseño y prototipado
-  { name: 'Figma', icon: 'Figma' },
-
-  // Frontend básico
-  { name: 'HTML', icon: 'Html' },
-  { name: 'CSS', icon: 'Css' },
-  { name: 'JavaScript', icon: 'Javascript' },
-  { name: 'TypeScript', icon: 'Typescript' },
-  { name: 'PHP', icon: 'Php' },
-  { name: 'Laravel', icon: 'Laravel' },
-
-  // Otros
-  { name: 'C++', icon: 'C' },
-  { name: 'Unity', icon: 'Unity' },
-];
-
-const SKILL_ICONS: Record<string, any> = {
-  Html,
-  Css,
-  Javascript,
-  Typescript,
-  Angular,
-  Node,
-  SqlServer,
-  AstroIcon,
-  Mysql,
-  Mongo,
-  Tailwind,
-  Git,
-  GitHub,
-  C,
-  Nestjs,
-  Docker,
-  Jwt,
-  Laravel,
-  FastApi,
-  Express,
-  Unity,
-  Swager,
-  Php,
-  Figma,
-  Azure,
-  Python,
-  Postgres,
-  Supabase,
-  Pm2,
-};
+import { SKILL_CATEGORIES } from '../data/skills';
 ---
-<section>
-  <h3 class="text-xl py-6 font-medium text-neutral-800 dark:text-neutral-100">Habilidades</h3>
 
-  <div class="grid grid-cols-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-6">
-    {
-      skills.map(({ icon, name }) => {
-        const Icon = SKILL_ICONS[icon];
-        return (
-          <div class="group">
-            <div
-              class="relative rounded-xl bg-neutral-100 dark:bg-neutral-400 p-4 shadow-md dark:shadow-sm 
-                         transition-all duration-300 ease-in-out transform group-hover:-translate-y-1 
-                         group-hover:scale-[1.03] group-hover:shadow-lg dark:group-hover:shadow-black/5"
-            >
-              {/* Decoración sutil */}
-              <div class="absolute inset-0 z-0 pointer-events-none 
-                          bg-gradient-to-br from-white/20 to-neutral-200/10 
-                          dark:from-neutral-300/10 dark:to-neutral-500/10 blur-sm rounded-xl" />
+<section
+  id="habilidades"
+  class="w-full flex justify-center items-center px-4 min-h-screen snap-start"
+>
+  <div
+    class="mx-auto flex w-full max-w-5xl flex-col gap-6 rounded-2xl px-4 py-6"
+  >
+    <div class="pb-3">
+      <p
+        class="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400"
+      >
+        Stack
+      </p>
+      <h3 class="text-4xl font-semibold tracking-tight text-neutral-900">
+        Habilidades principales
+      </h3>
+    </div>
 
-              {/* Contenido */}
-              <div class="relative z-10 flex flex-col items-center">
-                <Icon class="size-8 mb-2 text-neutral-700 dark:text-neutral-900 transition-colors duration-300" />
-                <p
-                  class="text-center text-xs font-medium text-neutral-800 dark:text-neutral-900"
-                  aria-label={name}
-                >
-                  {name}
-                </p>
-              </div>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+      {
+        SKILL_CATEGORIES.map(({ label, items }) => (
+          <div class="space-y-3">
+            <p class="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-500">
+              {label}
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-sm text-neutral-700 sm:grid-cols-3 dark:text-neutral-200">
+              {items.slice(0, 6).map((item) => (
+                <div class="group flex items-center gap-2 rounded-xl bg-neutral-100/80 px-2 py-2 ring-1 ring-neutral-200/70 transition duration-200 hover:ring-neutral-300 dark:bg-neutral-800/70 dark:ring-neutral-700/60 dark:hover:ring-neutral-600">
+                  {item.icon && (
+                    <div class="flex h-6 w-6 items-center justify-center">
+                      <item.icon class="h-6 w-6 text-neutral-600 transition duration-200 filter grayscale group-hover:grayscale-0 group-hover:text-neutral-900 dark:text-neutral-200 dark:group-hover:text-neutral-50" />
+                    </div>
+                  )}
+                  <span class="text-neutral-800 dark:text-neutral-50">
+                    {item.name}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
-        );
-      })
-    }
+        ))
+      }
+    </div>
   </div>
 </section>
-
-
-

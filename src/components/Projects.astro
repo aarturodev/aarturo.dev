@@ -1,24 +1,51 @@
 ---
 import { PROJECTS, type Project } from '../data/projects';
-import CardProject from './CardProject.astro';
-import Arrow from './icons/Arrow.astro';
+import CardCourses from './CardCourses.astro';
 ---
 
-<section>
-  <div class="flex justify-between py-4">
-    <h2 class="text-xl p-2 font-medium">Proyectos</h2>
-    <a
-      title="Más proyectos"
-      aria-label="More projects"
-      class="flex items-center gap-1 -translate-x-3 hover:scale-105 ease-in-out duration-300 text-neutral-500"
-      href="/projects"
+<section
+  id="proyectos"
+  class="w-full px-4 min-h-screen flex items-center justify-center snap-start"
+>
+  <div class="mx-auto flex w-full max-w-5xl flex-col gap-8 rounded-3xl p-6">
+    <div
+      class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between pb-3"
     >
-      <span class="text-sm underline underline-offset-4"> Ver más proyectos</span>
-      <!--<Arrow class="size-5 rotate-45" /> -->
-    </a>
-    <!-- -->
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    {PROJECTS.slice(0, 4).map((project: Project) => <CardProject project={project} />)}
+      <div>
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400"
+        >
+          Portafolio
+        </p>
+        <h2 class="text-4xl font-semibold tracking-tight text-neutral-900">
+          Proyectos personales
+        </h2>
+      </div>
+      <a
+        href="/projects"
+        class="inline-flex items-center gap-2 self-start rounded-full border border-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-700 transition hover:-translate-y-[1px] hover:border-neutral-300 hover:text-neutral-900"
+      >
+        Ver todos
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      {
+        PROJECTS.slice(0, 4).map((project: Project, idx: number) => (
+          <div class={idx >= 2 ? 'hidden sm:block' : ''}>
+            <CardCourses
+              title={project.title}
+              description={project.description}
+              link={project.link}
+              gitHub={project.gitHub}
+              visibility={project.visibility}
+              tags={project.tags}
+              logo={project.logo}
+              showImage={false}
+            />
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>

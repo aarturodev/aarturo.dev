@@ -6,97 +6,105 @@ import Platzi from './icons/Platzi.astro';
 export interface Course {
   title: string;
   logo: string;
-  description: string;
-  link: string;
-  gitHub: string;
+  description?: string;
+  link?: string;
+  gitHub?: string;
   visibility?: string;
-  tags: string[];
+  tags?: string[];
 }
 
-const { title, logo, description, link, gitHub, visibility, tags } = Astro.props;
+const {
+  title,
+  logo,
+  description,
+  link,
+  gitHub,
+  visibility,
+  tags,
+  showDetails = true,
+  showImage = true,
+} = Astro.props;
 ---
 
 <article
-  class="flex flex-col justify-between border border-neutral-300 dark:border-neutral-800 rounded-md overflow-hidden h-full relative 
-          dark:bg-red-200 shadow hover:shadow-lg hover:scale-[1.02] transition-transform duration-200"
+  class="group flex h-full flex-col gap-4 rounded-2xl bg-white p-4 shadow-[0_15px_50px_-45px_rgba(0,0,0,0.35)] transition duration-300 ease-out hover:-translate-y-[2px] dark:bg-neutral-900"
 >
-  <div class="flex flex-col flex-1 p-4 gap-2">
-    <!-- Header con título y logo -->
-    <header class="flex items-center justify-between mb-2">
-      <div class="flex items-center gap-3">
-        <div class="text-3xl">
-          <Platzi class="size-8" />
-        </div>
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-lg font-semibold text-neutral-800 dark:text-slate-200 hover:underline underline-offset-4 decoration-dotted"
-          aria-label={title}
-        >
-          {title}
-        </a>
-      </div>
-
-      <a
-        href={gitHub}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub"
-        title="Repositorio de GitHub"
-        class="hover:opacity-80 transition-opacity"
+  {showImage && (
+    <div
+      class="aspect-[16/9] w-full overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-neutral-900 transition duration-300 group-hover:ring-neutral-700"
+    >
+      <div
+        class="flex h-full w-full items-center justify-center text-4xl text-white"
       >
         {
-          visibility === 'private' ? (
-            <Lock class="size-4 text-neutral-600 dark:text-neutral-300" />
+          logo ? (
+          <img src={logo} alt={title} class="w-full h-full object-contain grayscale transition duration-200 group-hover:grayscale-0" />
           ) : (
-            <GitHub class="size-4 text-neutral-600 dark:text-neutral-300" />
+            <Platzi class="size-10" />
           )
         }
-      </a>
-    </header>
+      </div>
+    </div>
+  )}
 
-    <!-- Descripción -->
-    <p class="text-sm text-neutral-700 dark:text-neutral-300 line-clamp-3">
-      {description}
-    </p>
-
-    <!-- Tags con scroll horizontal -->
-    <footer
-      class="w-full overflow-x-auto flex flex-nowrap items-center gap-2 mt-auto pt-2 px-1 custom-scrollbar"
-    >
-      {
-        tags.map((tag: string) => (
-          <span
-            class="inline-flex mb-2 min-w-max items-center rounded-md border border-neutral-300 dark:border-neutral-700 
-                   bg-neutral-200/50 dark:bg-neutral-800/60 px-2 py-1 font-mono text-xs 
-                   text-neutral-700 dark:text-neutral-300 whitespace-nowrap"
+  {showDetails && (
+    <>
+      <header class="flex items-start justify-between">
+        <div class="space-y-1">
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[18px] font-semibold text-neutral-900 transition group-hover:text-neutral-700 dark:text-neutral-50 dark:group-hover:text-neutral-200"
+            aria-label={title}
           >
-            {tag}
-          </span>
-        ))
-      }
-    </footer>
-  </div>
+            {title}
+          </a>
+          <p
+            class="text-[11px] font-medium uppercase tracking-[0.12em] text-neutral-400 dark:text-neutral-500"
+          >
+            {visibility === 'private' ? 'Privado' : 'Público'}
+          </p>
+        </div>
+        {
+          gitHub && (
+            <a
+              href={gitHub}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              title="Repositorio de GitHub"
+              class="rounded-md p-2 text-neutral-400 transition hover:bg-neutral-50 hover:text-neutral-900 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+            >
+              {visibility === 'private' ? (
+                <Lock class="size-4" />
+              ) : (
+                <GitHub class="size-4" />
+              )}
+            </a>
+          )
+        }
+      </header>
+
+      <p
+        class="text-[15px] leading-relaxed text-neutral-700 line-clamp-3 dark:text-neutral-200"
+      >
+        {description}
+      </p>
+
+      {tags && (
+        <div
+          class="flex flex-wrap gap-2 text-[11px] text-neutral-500 dark:text-neutral-400"
+        >
+          {
+            tags.map((tag: string) => (
+              <span class="rounded-full border border-neutral-200 bg-white px-2.5 py-1 font-semibold tracking-tight transition group-hover:border-neutral-300 group-hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:group-hover:border-neutral-600">
+                {tag}
+              </span>
+            ))
+          }
+        </div>
+      )}
+    </>
+  )}
 </article>
-
-<style>
-  .custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #a3a3a3 transparent;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar {
-    height: 1px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #a3a3a3;
-    border-radius: 1px;
-  }
-
-</style>

@@ -1,6 +1,46 @@
+---
+import Email from './icons/Email.astro';
+import GitHub from './icons/GitHub.astro';
+import LinkedIn from './icons/LinkedIn.astro';
+---
+
 <footer
-     class="w-full max-w-4xl flex items-center justify-between mx-auto px-4 pt-10"
+  class="mt-auto w-full border-neutral-200/70 bg-white/80 py-8 backdrop-blur"
+  id="contacto"
 >
-     <span class="font-extralight text-xs">✨ Hecho con café, pasión y Astro.</span>
-     <span class="font-extralight text-xs">2025 © Anderson Marín</span>
+  <div
+    class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 text-sm text-neutral-500"
+  >
+    <div
+      class="flex items-center gap-3 rounded-full bg-white/80 px-3 py-2 shadow-[0_10px_30px_-26px_rgba(0,0,0,0.35)]"
+    >
+      <a
+        class="rounded-xl p-2 transition hover:bg-neutral-100"
+        href="https://www.linkedin.com/in/aarturodev"
+        aria-label="LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <LinkedIn class="size-5" />
+      </a>
+      <a
+        class="rounded-xl p-2 transition hover:bg-neutral-100"
+        href="https://github.com/aarturodev"
+        aria-label="GitHub"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <GitHub class="size-6" />
+      </a>
+
+      <a
+        class="rounded-xl p-2 transition hover:bg-neutral-100"
+        href="mailto:andersonarturomarin@gmail.com"
+        aria-label="Email"
+      >
+        <Email class="size-6" />
+      </a>
+    </div>
+    <p class="text-xs text-neutral-400">2025 © Anderson Marín</p>
+  </div>
 </footer>
